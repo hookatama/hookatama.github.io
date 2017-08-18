@@ -1,4 +1,4 @@
 # My_repository
 
 
-https://github.com/hookatama/My_repository/test/index.html
+https://github.com/hookatama/hookatama.github.io/test/index.html
