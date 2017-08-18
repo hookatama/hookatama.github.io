@@ -1,0 +1,538 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper
+{ 
+    position: relative;
+    min-width: 600px;
+}
+
+.notepaper
+{
+    position: absolute;
+    background: url(../media/backnotepaper.png) no-repeat top left;
+    left: 0;
+    width: 25%;
+    height: 50%;
+    background-size: 100%;
+}
+.laptop
+{
+    position: absolute;
+    background: url(../media/laptop.png) no-repeat top right;
+    right: 0;
+    width: 36%;
+    height: 50%;
+    background-size: 100%;
+}
+.languages
+{
+    position: absolute;
+    right: 65%;
+    top: 1%;
+}
+/*
+================ MEDIA QUERIES ==============
+*/
+
+@media screen and (max-width: 930px)
+{
+    .notepaper
+    {
+        width: 28%;
+    }
+    .laptop
+    {
+        width: 65%;
+        height: 20%;
+    }
+    .welcome h1
+    {
+        padding-top: 29%;
+     
+    }
+    .welcome h1, h2
+    {
+           text-align: center;
+    }
+    .languages img
+    {
+       padding: 20px 15px;
+    }
+     section.my__tools .pen
+    {
+       display: none;
+    }
+    
+    
+}
+    
+@media screen and (max-width: 680px)
+{
+    .notepaper
+    {
+        width: 38%;
+    }
+    img.cooter{
+        margin-left: -30px;
+    }
+}
+/*                        
+=============== HEADER =========================
+*/
+header
+{
+    text-transform: uppercase;
+}
+.container
+{
+    width: 60%;
+    min-width: 600px;
+    margin: auto;
+}
+
+.welcome
+{
+    font-family: 'Helvetica-Medium';
+
+    padding-top: 15%;
+    padding-left: 5%;
+}
+.welcome h1
+{
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 58px;
+}
+.welcome h2
+{
+    font-size: 26px;
+
+    padding-top: 15px;
+}
+.welcome span
+{
+    color: #2c85b8;
+}
+.welcome sup{
+    position: relative;
+    top: -7px;
+}
+button.welcome__button
+{
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Helvetica-Medium';
+    display: block;
+
+    width: 225px;
+    height: 40px;
+    margin: 10% auto;
+
+    border: 1px solid #121212;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 3px 4px 8px 0 rgba(0,0,0,.35);
+}
+button.welcome__button a
+{
+    padding: 10px 16px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: #121212;
+}
+button.welcome__button span img
+{
+    position: relative;
+    top: 3px;
+}
+button.welcome__button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+}
+button.welcome__button:active {
+	position:relative;
+	top:1px;
+}
+
+
+/*
+================= FONT STYLES ===================
+*/
+.screencast__main,
+.portfolio,
+.about,
+.footer__slogan
+{
+    font-family: 'Helvetica-Medium';
+    font-weight: bold;
+    text-align: center;
+
+    color: #313131;
+}
+.screencast__main h2,
+.about h2,
+.portfolio h2,
+.footer__slogan h2
+{
+    font-size: 37px;
+
+    text-transform: uppercase;
+}
+.screencast__main h3,
+.about h3,
+.portfolio h3,
+.footer__slogan h3
+{
+    font-size: 20px;
+}
+/*
+================ SECTION MY__TOOLS ==============
+*/
+section.my__tools
+{
+    position:relative;    
+}
+/*
+================ SECTION MY__TOOLS -> PEN ==============
+*/
+section.my__tools .pen
+{
+    position: absolute;
+    background: url(../media/pen.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 7%;
+    height: 150%;
+    left: 15%;
+    top: 45%;
+}
+
+/*
+================ SECTION MY__TOOLS -> h2 ==============
+*/
+
+.about
+{
+    margin-bottom: 7%;
+    padding-top: 5%;
+}
+
+/*
+================ SKILLS + MOUSE ==============
+*/
+.about__skills ul li
+{
+    font-family: "Helvetica-Light";
+    font-size: 18px;
+    line-height: 25px;
+
+    list-style-image: url(../media/elips-blue.png);
+}
+.about__skills ul
+{
+    padding-left: 20%;
+    max-height: 400px;
+}
+.about__skills ul li:nth-child(n+3)
+{
+    list-style-image: url(../media/elipse-empty.png);
+}
+img.about__skills_img_right
+{
+    float: right;
+}
+.wrap
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+.item
+{
+    display: flex;
+    float: right;
+
+    box-sizing: border-box;
+    width: 50%;
+}
+.mouse
+{
+    background: url(../media/mouse.png) no-repeat top center;
+    background-size: contain;
+
+}
+/*
+================ SECTION "SCREENCAST" ==============
+*/
+.screencast
+{
+    background: url(../media/klava.png) no-repeat;
+    background-size: cover;
+}
+.screencast__main
+{
+    padding-top: 5%;
+}
+.youtube
+{
+    width: 100%;
+    margin: 3% auto;
+}
+.youtube iframe
+{
+    display: block;
+    margin: auto;
+    padding-bottom: 5%;
+}
+/*
+================ SECTION PORTFOLIO ==============
+*/
+.portfolio
+{
+    margin-top: 6%;
+}
+.portfolio_blocks
+{
+    margin: 3% auto 10%;
+    text-align: center;
+}
+.portfolio_blocks .block
+{
+    display: inline-block;
+    width: 30%;
+    border: 1px solid black;
+}
+.portfolio_blocks .block img
+{
+    width: 100%;
+    min-height: 180px;
+}
+.portfolio_blocks .block:nth-child(2)
+{
+    margin: 0 2%;
+}
+.portfolio_blocks .block p
+{
+    margin: 2.5% 0 2.5%;
+    font-family: 'Helvetica-Medium';
+    font-weight: bold;
+    text-align: center;
+}
+.clearfix
+{
+    clear: both;
+}
+/*
+================ FOOTER ===================
+*/
+footer
+{
+    background-color: #8ea4a6;
+    position: relative;
+    
+}
+.cooter
+{
+    position: relative;
+    top: -50px;
+    width: 100%;
+}
+.cooter img{
+    display: block;
+    margin: auto;
+}
+.footer__slogan
+{
+    margin: 0 0 5%;
+    color: #fff;
+}
+/*
+================ FOOTER BUTTON ==============
+*/
+.footer__button,
+.type__contacts p{
+    margin: 3% auto;
+    width: 351px;
+    height: 57px;
+    
+}
+.footer__button button,
+.type__contacts p input
+{
+    
+    font-family: "Helvetica-Medium";
+    
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 10px;
+    border: none;
+    
+    
+    position: relative;
+    overflow: hidden;
+}
+.footer__button button a
+{
+    text-decoration: none;
+}
+
+.blue__style button
+{
+    cursor: pointer;
+    font-size: 28px;
+    text-transform: uppercase;
+    background: #0793ec;
+    box-shadow: 0 3px 0 0 #0e5b8d;
+}
+.blue__style button a{
+    color: #fff;
+}
+.blue__style button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6));
+	background:-moz-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:-webkit-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:-o-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:-ms-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6',GradientType=0);
+	background-color:#1e62d0;
+}
+.blue__style button:active {
+	position:relative;
+	top:1px;
+}
+
+
+.say__hello button img
+{
+    position: absolute;
+    left: 3%;
+}
+.say__hello button a
+{
+    padding-left: 15%;
+}
+.say__hello button a span
+{
+    position: absolute;
+    display: block;
+    width: 70px;
+    height: 32px;
+    background: rgba(41,41,41,0.20);
+    transform: rotate(47deg);
+    top: 60%;
+    left: 3.7%;
+    
+    border-radius: 6px;
+}
+
+.type__contacts p input
+{
+    box-shadow: 0 3px 5px 0 #414141;
+    background: #ffffff;
+}
+.type__contacts p input
+{
+    color: #6e6e6e;
+    font-size: 16px;
+    text-align: center;
+}
+
+.send__contacts button img
+{
+    position: absolute;
+    left: 3%;
+    top: 15%;
+}
+.send__contacts button a span
+{
+    position: absolute;
+    display: block;
+    width: 70px;
+    height: 28px;
+    background: rgba(41,41,41,0.20);
+    transform: rotate(43deg);
+    top: 58%;
+    left: 4%;
+    
+    border-radius: 5px;
+}
+
+/*
+================ FOOTER SOCIAL ==============
+*/
+
+.footer__social
+{
+    font-family: 'Helvetica-Light';
+    width: 100%;
+    margin: 3% auto 1%;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.footer__social_img{
+    width: 25%;
+    margin: 2% auto 0;
+    padding-bottom: 2%;
+}
+.footer__social_img a:first-child
+{
+    position: relative;
+    top: 1px;
+}
+.footer__social_img a:nth-child(2)
+{
+    margin: 0 11px;
+}
+/*
+================ FOOT ======================
+*/
+.foot .row ul
+{
+    margin: 0.5%;
+}
+.foot .row ul
+{
+    padding-left: 12%
+}
+.foot .row ul li
+{
+    font-family: 'Helvetica-Light';
+    display: inline-block;
+    position: relative;
+    font-size: 13px;
+    color: #3f3f3f;
+}
+.foot .row ul li:nth-child(2)
+{
+    margin: 0 12%;   
+}
+.foot .row ul li img.clock,
+img.bomb
+{
+    position: absolute;
+
+}
+.foot .row ul li img.clock
+{
+        left: -30%;
+        top: -25%;
+}
+.foot .row ul li img.bomb
+{
+    left: -23%;
+    top: -25%
+}
