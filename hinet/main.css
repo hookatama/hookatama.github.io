@@ -550,7 +550,7 @@ header .container{
     text-indent: -9999px;
     width: 53px;
     height: 52px;
-    background: url(../assets/img/main/hinet.png) no-repeat 50% 50%;
+    background: url(/assets/img/main/hinet.png) no-repeat 50% 50%;
     background-size: cover;
     flex-shrink: 0;
     margin-right:20px;
@@ -715,7 +715,7 @@ line-height: 2em;
     margin-left: 5px
 }
 .mycab__link{
-    background: url(../assets/img/main/mycab.png) no-repeat;
+    background: url(/assets/img/main/mycab.png) no-repeat;
     background-position: 0 5px;
     padding-left: 35px;
     background-size: 30px;
@@ -1114,7 +1114,7 @@ min-height:350px;
     text-align: center;
     background-size: cover;
     padding: 0 20px 10px;
-    background: url(../assets/img/pdkluchenie1/elips.png) no-repeat 50% 50%;
+    background: url(/assets/img/pdkluchenie1/elips.png) no-repeat 50% 50%;
 }
 
 .f-order__title {
@@ -2527,16 +2527,16 @@ max-width:50%;
     text-indent: -9999px;
     width: 53px;
     height: 56px;
-    background: url(../assets/img/about/advantages1.png) no-repeat 50% 50%;
+    background: url(/assets/img/about/advantages1.png) no-repeat 50% 50%;
     background-size: cover;
     flex-shrink: 0;
     margin: 20px auto;
 }
 .fact__icon--2{
-    background-image: url(../assets/img/about/advantages2.png)
+    background-image: url(/assets/img/about/advantages2.png)
 }
 .fact__icon--3{
-    background-image: url(../assets/img/about/advantages3.png)
+    background-image: url(/assets/img/about/advantages3.png)
 }
 .what__next{
     display: flex;
@@ -3155,7 +3155,7 @@ padding:0;
           display: none;
       }
       .about__description{
-          background: url(../assets/img/about/photo_banner.jpg) no-repeat center;
+          background: url(/assets/img/about/photo_banner.jpg) no-repeat center;
           background-color: rgba(0,0,0,.6);
           background-blend-mode: darken;
       }  
