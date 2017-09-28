@@ -12,15 +12,16 @@ $('#submitButton').click(function(){
       }
       
       if (arr.length > 100){
-         arr.length = 100;
-      }
-      
-      arr.forEach(function(item, i, arr) {
-        $('#result').append(item + ' ');
+         var newArr = arr.splice(100);
+      } newArr = arr;
+
+      newArr.reduce(function(result, item, i){
+         $('#result').append(item + ' ');
         if ( (i+1)%10 == 0 ) {
           $('#result').append( $('<br/>') );
         }
-        
-      });
+      }, 0);
+      
+
   });
 });
