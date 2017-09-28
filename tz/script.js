@@ -3,7 +3,7 @@ $('#submitButton').click(function(){
       
       $('#result').empty();
       
-      var value = $('#numbs option:selected').val();
+      var value = $('#numbs').val();
       var arr = [];
       
       for(var i = 0; i < value; i++){
