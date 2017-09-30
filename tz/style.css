@@ -4,7 +4,7 @@ body{
 }
 
 .wrapper{
-  margin: 5% 0 0 5%;
+  margin: 5% 0 0 2%;
 }
 
 select{
@@ -50,7 +50,13 @@ select{
   border-radius: 3px;
   color: #565656;
   background: none;
-  
+}
+
+.start{
+  margin-left: 11.7%;
+}
+.sort{
+  margin-left: 1.5%;
 }
 
 .button:hover{
@@ -69,7 +75,33 @@ select{
   top: 1px;
 }
 
-.result{
-    display: block;
-    margin-top: 20px;
+.clearfix{
+    clear: both;
 }
+
+.result,
+.sort__result{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 0;
+    width: 45%;
+    border: 1px solid #777;
+    height: 220px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.sort__result{
+    border: 1px solid #777;
+    margin-left: 20px;
+}
+
+input#from,
+input#to{
+    padding: 5px;
+    width: 130px;
+    border: 1px solid #777;
+    border-radius: 3px;
+    color: #565656;
+}
+

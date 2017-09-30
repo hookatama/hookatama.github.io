@@ -22,8 +22,24 @@
             <option value="1000000">1000000</option>
           </select>  
         </div>
-        <button class="button" type="submit" value="Submit" id="submitButton">START</button>
-        <div class="result"><p id="result"></p></div>
+        <input type="text" id="from" onfocus="if (this.value == 'From') {this.value = '';}" onblur="if (this.value == '') {this.value = 'From';}">
+        
+        <input type="text" id="to" onfocus="if (this.value == 'To') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To';}">
+        
+        <button class="button start" id="startButton">START</button>
+        
+        <button class="button sort" id="sortButton">SORT</button>
+        
+        <div class="clearfix"></div>
+        
+        <div class="result">
+            <p id="startResult"></p>
+        </div>
+        
+        <div class="sort__result">
+            <p id="sortResult"></p>
+        </div>
+        
     </div>
 </body>
 </html>

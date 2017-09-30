@@ -1,8 +1,9 @@
 $(document).ready(function(){
-$('#submitButton').click(function(){
+$('#startButton').click(function(){
       
-      $('#result').empty();
-      
+      $('#startResult').empty();
+
+    
       var value = $('#numbs').val();
       var arr = [];
       
@@ -16,12 +17,48 @@ $('#submitButton').click(function(){
       } newArr = arr;
 
       newArr.reduce(function(result, item, i){
-         $('#result').append(item + ' ');
+         $('#startResult').append(item + ' ');
         if ( (i+1)%10 == 0 ) {
-          $('#result').append( $('<br/>') );
+          $('#startResult').append( $('<br/>') );
         }
       }, 0);
-      
-
   });
+
+$('#sortButton').click(function(){
+    
+      $('#sortResult').empty();
+    
+      var selectValue = $('#numbs').val();
+      var startResult = $('#startResult').text();    
+    
+      var arr = startResult.split(' ');
+    
+      var fromValue = +($('#from').val());
+      var toValue  = +($('#to').val());
+    
+      var newArr = [];
+    
+      if ((fromValue > toValue) || (fromValue < 0) || (toValue > selectValue)){
+          $('#sortResult').text('Wrong arguments');
+      } else{
+          for(var i = 0; i < arr.length; i++){
+              if ((arr[i] > fromValue) && (arr[i] <= toValue)){
+                  newArr.push(arr[i]);
+              }
+          }
+          
+          newArr.sort(function(a, b) {
+            if (a > b) return 1;
+            if (a < b) return -1;
+          });
+          
+          newArr.reduce(function(result, item, i){
+            $('#sortResult').append(item + ' ');
+            if ( (i+1)%10 == 0 ) {
+            $('#sortResult').append( $('<br/>') );
+            }
+          }, 0);
+      }
+});
+    
 });
