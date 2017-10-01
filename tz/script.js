@@ -1,19 +1,19 @@
 $(document).ready(function(){
+    
 $('#startButton').click(function(){
       
       $('#startResult').empty();
 
-    
-      var value = $('#numbs').val();
+      selectValue = +$('#numbs').val();
       var arr = [];
       
-      for(var i = 0; i < value; i++){
-        var rand = Math.floor(Math.random() * (+value+1));
+      for(var i = 0; i < selectValue; i++){
+        var rand = Math.floor(Math.random() * (selectValue+1));
         arr.push(rand);
       }
       
       if (arr.length > 100){
-         var newArr = arr.splice(100);
+         newArr = arr.splice(100);
       } newArr = arr;
 
       newArr.reduce(function(result, item, i){
@@ -23,42 +23,45 @@ $('#startButton').click(function(){
         }
       }, 0);
   });
-
+    
 $('#sortButton').click(function(){
     
       $('#sortResult').empty();
     
-      var selectValue = $('#numbs').val();
-      var startResult = $('#startResult').text();    
+      var fromValue = $('#from').val();
+      if (fromValue == 'From'){
+          fromValue = 0;
+          }
+
+      var toValue  = $('#to').val();
+      if (toValue == 'To'){
+          toValue = selectValue;
+      }
     
-      var arr = startResult.split(' ');
+      if ((fromValue < 0) || (isNaN(fromValue)) || (fromValue > toValue) || (toValue > selectValue) || (isNaN(toValue))){
+          $('#sortResult').text('Wrong arguments! Please, try again')
+      }
     
-      var fromValue = +($('#from').val());
-      var toValue  = +($('#to').val());
+      var arr = [];
     
-      var newArr = [];
-    
-      if ((fromValue > toValue) || (fromValue < 0) || (toValue > selectValue)){
-          $('#sortResult').text('Wrong arguments');
-      } else{
-          for(var i = 0; i < arr.length; i++){
-              if ((arr[i] > fromValue) && (arr[i] <= toValue)){
-                  newArr.push(arr[i]);
+          for(var i = 0; i < newArr.length; i++){
+              if ((newArr[i] >= fromValue) && (newArr[i] <= toValue)){
+                  arr.push(newArr[i]);
               }
           }
           
-          newArr.sort(function(a, b) {
+          arr.sort(function(a, b) {
             if (a > b) return 1;
             if (a < b) return -1;
+            
           });
           
-          newArr.reduce(function(result, item, i){
+          arr.reduce(function(result, item, i){
             $('#sortResult').append(item + ' ');
             if ( (i+1)%10 == 0 ) {
             $('#sortResult').append( $('<br/>') );
             }
           }, 0);
-      }
 });
     
 });
