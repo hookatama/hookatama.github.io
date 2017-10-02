@@ -12,34 +12,36 @@
 </head>
 <body>
    <div class="wrapper">
-        <div class="selectbox">
-          <select id="numbs">
-            <option value="10">10</option>
-            <option value="100">100</option>
-            <option value="1000">1000</option>
-            <option value="10000">10000</option>
-            <option value="100000">100000</option>
-            <option value="1000000">1000000</option>
-          </select>  
+       <div class="left_block">
+            <div class="selectbox">
+              <select id="numbs">
+                <option value="10">10</option>
+                <option value="100">100</option>
+                <option value="1000">1000</option>
+                <option value="10000">10000</option>
+                <option value="100000">100000</option>
+                <option value="1000000">1000000</option>
+              </select>  
+            </div>
+            <label for="from">From:</label>
+            <input type="number" id="from" value="0">
+
+            <label for="to">To:</label>
+            <input type="number" id="to" value="10">
+
+            <button class="button start" id="startButton">START</button>
+
+            <div class="start__result">
+                <p id="startResult" class="result"></p>
+            </div>
         </div>
-        <input type="text" id="from" value='From'  onfocus="if (this.value == 'From') {this.value = '';}" onblur="if (this.value == '') {this.value = 'From';}">
-        
-        <input type="text" id="to" value='To'  onfocus="if (this.value == 'To') {this.value = '';}" onblur="if (this.value == '') {this.value = 'To';}">
-        
-        <button class="button start" id="startButton">START</button>
-        
-        <button class="button sort" id="sortButton">SORT</button>
-        
-        <div class="clearfix"></div>
-        
-        <div class="result">
-            <p id="startResult"></p>
+        <div class="right_block">
+            <button class="button sort" id="sortButton">SORT</button>
+            
+            <div class="sort__result">
+                <p id="sortResult" class="result"></p>
+            </div>
         </div>
-        
-        <div class="sort__result">
-            <p id="sortResult"></p>
-        </div>
-        
     </div>
 </body>
 </html>

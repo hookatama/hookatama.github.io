@@ -1,10 +1,13 @@
+var newArr;
+
 $(document).ready(function(){
     
 $('#startButton').click(function(){
       
       $('#startResult').empty();
 
-      selectValue = +$('#numbs').val();
+      var selectValue = +$('#numbs').val();   
+    
       var arr = [];
       
       for(var i = 0; i < selectValue; i++){
@@ -12,14 +15,14 @@ $('#startButton').click(function(){
         arr.push(rand);
       }
       
-      if (arr.length > 100){
-         newArr = arr.splice(100);
-      } newArr = arr;
+      newArr = arr;
 
       newArr.reduce(function(result, item, i){
-         $('#startResult').append(item + ' ');
-        if ( (i+1)%10 == 0 ) {
-          $('#startResult').append( $('<br/>') );
+        if ( i < 100) {
+            $('#startResult').append(item + ' ');
+            if ( (i+1)%10 == 0 ) {
+                $('#startResult').append( $('<br/>') );
+            }
         }
       }, 0);
   });
@@ -28,19 +31,21 @@ $('#sortButton').click(function(){
     
       $('#sortResult').empty();
     
-      var fromValue = $('#from').val();
-      if (fromValue == 'From'){
-          fromValue = 0;
-          }
+      var selectValue = +$('#numbs').val();   
+    
+      var fromValue = +$('#from').val();
+      if (fromValue == ''){
+              fromValue = 0};
 
-      var toValue  = $('#to').val();
-      if (toValue == 'To'){
-          toValue = selectValue;
-      }
+      var toValue  = +$('#to').val();
+      if (toValue == ''){
+              toValue = 10};
+    
     
       if ((fromValue < 0) || (isNaN(fromValue)) || (fromValue > toValue) || (toValue > selectValue) || (isNaN(toValue))){
           $('#sortResult').text('Wrong arguments! Please, try again')
       }
+      else{
     
       var arr = [];
     
@@ -53,15 +58,19 @@ $('#sortButton').click(function(){
           arr.sort(function(a, b) {
             if (a > b) return 1;
             if (a < b) return -1;
+            if (a == b) return 0;
             
           });
           
           arr.reduce(function(result, item, i){
-            $('#sortResult').append(item + ' ');
-            if ( (i+1)%10 == 0 ) {
-            $('#sortResult').append( $('<br/>') );
+            if ( i < 100) {
+                $('#sortResult').append(item + ' ');
+                if ( (i+1)%10 == 0 ) {
+                    $('#sortResult').append( $('<br/>') );
+                } 
             }
           }, 0);
+      }
 });
     
 });

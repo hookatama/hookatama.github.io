@@ -4,7 +4,17 @@ body{
 }
 
 .wrapper{
-  margin: 5% 0 0 2%;
+  margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left_block,
+.right_block{
+    width: 50%;
+}
+.left_block{
+    padding-left: 2%;
 }
 
 select{
@@ -44,7 +54,6 @@ select{
 .button{
   padding: .5rem .5rem .5rem;
   text-align: center;
-  display: inline-block;
   cursor: pointer;
   border: 1px solid #777;
   border-radius: 3px;
@@ -52,12 +61,7 @@ select{
   background: none;
 }
 
-.start{
-  margin-left: 11.7%;
-}
-.sort{
-  margin-left: 1.5%;
-}
+
 
 .button:hover{
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
@@ -75,16 +79,11 @@ select{
   top: 1px;
 }
 
-.clearfix{
-    clear: both;
-}
-
-.result,
+.start__result,
 .sort__result{
-    display: inline-block;
     margin-top: 20px;
     padding: 0;
-    width: 45%;
+    width: 90%;
     border: 1px solid #777;
     height: 220px;
     box-sizing: border-box;
@@ -93,7 +92,6 @@ select{
 
 .sort__result{
     border: 1px solid #777;
-    margin-left: 20px;
 }
 
 input#from,
@@ -103,5 +101,15 @@ input#to{
     border: 1px solid #777;
     border-radius: 3px;
     color: #565656;
+}
+input#to{
+    margin-right: 9.5%
+}
+label{
+    font-weight: normal;
+    margin-left: 5px;
+}
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
