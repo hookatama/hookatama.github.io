@@ -2,6 +2,27 @@ var arr;
 
 $(document).ready(function(){
     
+       $('input').change(function() {
+           
+          var selectValue = +$('#numbs').val();
+    
+          var fromValue = +$('#from').val();
+           
+          var toValue = +$('#to').val(); 
+           
+          if (toValue > selectValue){
+              $('#toValue').val(selectValue)
+          } else if (toValue < fromValue){ $('#to').val(fromValue)}
+           
+          if (fromValue < 0){
+              $('#from').val(0);
+          }
+           else if (fromValue > toValue) {
+              $('#from').val(toValue)
+          }
+        }); 
+    
+
 $('#startButton').click(function(){
       
       $('#startResult').empty();
@@ -10,11 +31,13 @@ $('#startButton').click(function(){
     
       var fromValue = +$('#from').val();
       if (fromValue == ''){
-              fromValue = 0};
+              fromValue = 0
+      }
 
       var toValue  = +$('#to').val();
       if (toValue == ''){
-              toValue = 10};
+              toValue = 10
+      }
     
       arr = [];
 
@@ -24,11 +47,10 @@ $('#startButton').click(function(){
           }
 
           arr.reduce(function(result, item, i){
-            if ( i < 100) {
-                $('#startResult').append(item + ' ');
-                if ( (i+1)%10 == 0 ) {
-                    $('#startResult').append( $('<br/>') );
-                }
+            if (i <= 100) {
+                (i+1)%10 == 0 ? 
+                  $('#startResult').append($('<br/>')) :
+                  $('#startResult').append(item + ' ')
             }
           }, 0);
   });
@@ -40,16 +62,15 @@ $('#sortButton').click(function(){
           arr.sort(function(a, b) {
             if (a > b) return 1;
             if (a < b) return -1;
-            if (a === b) return 0;
+            if (a === b) return 0
 
           });
           
           arr.reduce(function(result, item, i){
-            if ( i < 100) {
-                $('#sortResult').append(item + ' ');
-                if ( (i+1)%10 == 0 ) {
-                    $('#sortResult').append( $('<br/>') );
-                } 
+            if (i < 100) {
+               (i+1)%10 == 0 ? 
+                  $('#sortResult').append($('<br/>')) :
+                $('#sortResult').append(item + ' ')
             }
           }, 0);
 });
