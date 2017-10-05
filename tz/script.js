@@ -17,7 +17,7 @@ $(document).ready(function(){
           }
           
           if (toValue > max) {
-              $('#toValue').val(max)
+              $('#to').val(max)
           }
           else if (toValue < fromValue) {                       $('#to').val(fromValue)
           }
