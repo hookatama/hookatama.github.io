@@ -11,8 +11,10 @@ body{
 
 .left_block,
 .right_block{
-    width: 50%;
+    width: 45%;
+    margin-right: 2%;
 }
+
 .left_block{
     padding-left: 2%;
 }
@@ -61,6 +63,9 @@ select{
   background: none;
 }
 
+.start{
+    float: right;
+}
 
 
 .button:hover{
@@ -83,7 +88,7 @@ select{
 .sort__result{
     margin-top: 20px;
     padding: 0;
-    width: 90%;
+    width: 100%;
     border: 1px solid #777;
     height: 220px;
     box-sizing: border-box;
@@ -102,9 +107,7 @@ input#to{
     border-radius: 3px;
     color: #565656;
 }
-input#to{
-    margin-right: 9.5%
-}
+
 label{
     font-weight: normal;
     margin-left: 5px;

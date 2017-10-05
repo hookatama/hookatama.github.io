@@ -2,7 +2,7 @@ var arr;
 
 $(document).ready(function(){
     
-       $('input').change(function() {
+       $('input').on('change',function() {
            
           var selectValue = +$('#numbs').val();
     
@@ -10,15 +10,16 @@ $(document).ready(function(){
            
           var toValue = +$('#to').val(); 
            
-          if (toValue > selectValue){
-              $('#toValue').val(selectValue)
-          } else if (toValue < fromValue){ $('#to').val(fromValue)}
+          var max = parseInt($('#to').attr('max'));
            
-          if (fromValue < 0){
-              $('#from').val(0);
-          }
-           else if (fromValue > toValue) {
+          if (fromValue > toValue) {
               $('#from').val(toValue)
+          }
+          
+          if (toValue > max) {
+              $('#toValue').val(max)
+          }
+          else if (toValue < fromValue) {                       $('#to').val(fromValue)
           }
         }); 
     
@@ -47,10 +48,9 @@ $('#startButton').click(function(){
           }
 
           arr.reduce(function(result, item, i){
-            if (i <= 100) {
-                (i+1)%10 == 0 ? 
-                  $('#startResult').append($('<br/>')) :
-                  $('#startResult').append(item + ' ')
+           if (i < 100) {
+             $('#startResult').append(item + ((i+1)%10 === 0 ? '<br/>':' '))
+
             }
           }, 0);
   });
@@ -68,9 +68,8 @@ $('#sortButton').click(function(){
           
           arr.reduce(function(result, item, i){
             if (i < 100) {
-               (i+1)%10 == 0 ? 
-                  $('#sortResult').append($('<br/>')) :
-                $('#sortResult').append(item + ' ')
+              $('#sortResult').append(item + ((i+1)%10 === 0 ? '<br/>':' '))
+
             }
           }, 0);
 });
